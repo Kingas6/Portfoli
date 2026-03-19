@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagnik Roy - Aspiring Software Engineer | AI & ML Enthusiast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fadeInUp': 'fadeInUp 0.8s ease-out',
+                        'slideInRight': 'slideInRight 0.8s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translate3d(0,0,0)' },
+                            '50%': { transform: 'translate3d(0,-10px,0)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translate3d(0,40px,0)' },
+                            '100%': { opacity: '1', transform: 'translate3d(0,0,0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translate3d(100%,0,0)' },
+                            '100%': { opacity: '1', transform: 'translate3d(0,0,0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .skill-bar {
+            background: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .skill-progress {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 2s ease-in-out;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        @media (max-width: 768px) {
+            .hero-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        Sagnik Roy
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="#about" class="nav-link py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="#skills" class="nav-link py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Skills</a>
+                    <a href="#achievements" class="nav-link py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Achievements</a>
+                    <a href="#projects" class="nav-link py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden pb-4 glass-effect">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Skills</a>
+                <a href="#achievements" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Achievements</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center gradient-bg pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center hero-content">
+                <div class="animate-float mb-8">
+                    <div class="w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-8 glass-effect flex items-center justify-center">
+                        <i class="fas fa-robot text-4xl text-white"></i>
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent mb-6 animate-fadeInUp">
+                    Sagnik Roy
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fadeInUp animation-delay-300">
+                    B.Tech Student | <span class="font-semibold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Aspiring Software Engineer</span> | AI & ML Enthusiast
+                </p>
+                <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto animate-fadeInUp animation-delay-600">
+                    Rajiv Gandhi Institute of Petroleum Technology (RGIPT), Jais
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fadeInUp animation-delay-900">
+                    <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-full shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-arrow-down mr-2"></i>Get In Touch
+                    </a>
+                    <a href="#resume" class="px-8 py-4 border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-gray-500 font-semibold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-file-download mr-2"></i>Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-6">
+                    About Me
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fadeInUp">
+                    <p class="text-lg text-gray-300 leading-relaxed mb-8">
+                        I am a B.Tech student at <span class="font-semibold text-white">RGIPT, Jais</span>, currently diving deep into 
+                        <span class="font-semibold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                            Artificial Intelligence and Machine Learning
+                        </span>.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-8">
+                        Passionate about <strong>problem-solving</strong> and continuously sharpening my skills in 
+                        <span class="font-semibold text-white">Data Structures and Algorithms (DSA)</span>.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        Active participant in competitive programming on <strong>Codeforces</strong> with a current rating of <span class="font-bold text-2xl text-blue-400">1100</span>.
+                    </p>
+                </div>
+                <div class="animate-slideInRight">
+                    <div class="glass-effect p-8 rounded-3xl hover-lift transition-all duration-300">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Tech Journey</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-brain text-white"></i>
+                                </div>
+                                <span class="text-gray-300">AI & ML Enthusiast</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-code text-white"></i>
+                                </div>
+                                <span class="text-gray-300">Competitive Programmer</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-robot text-white"></i>
+                                </div>
+                                <span class="text-gray-300">Robotics Builder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-6">
+                    Skills & Expertise
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-effect p-8 rounded-3xl hover-lift group">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-code text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Programming Languages</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>C/C++</span>
+                                <span class="text-sm text-gray-400">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Python</span>
+                                <span class="text-sm text-gray-400">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Java</span>
+                                <span class="text-sm text-gray-400">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-effect p-8 rounded-3xl hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mr-4 hover:scale-110 transition-transform">
+                            <i class="fas fa-brain text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Core Expertise</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="text-center py-6">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">1100</div>
+                            <div class="text-gray-400">Codeforces Rating</div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-green-400 mb-1">DSA</div>
+                                <div class="text-sm text-gray-400">Advanced</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-purple-400 mb-1">CP</div>
+                                <div class="text-sm text-gray-400">Active</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-effect p-8 rounded-3xl hover-lift md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mr-4 hover:scale-110 transition-transform">
+                            <i class="fas fa-rocket text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Interests</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="group p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 hover:bg-purple-500/30 transition-all">
+                            <i class="fas fa-brain text-2xl text-purple-400 mb-2 block group-hover:scale-110"></i>
+                            <span class="font-semibold text-white">AI/ML</span>
+                        </div>
+                        <div class="group p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 hover:bg-blue-500/30 transition-all">
+                            <i class="fas fa-robot text-2xl text-blue-400 mb-2 block group-hover:scale-110"></i>
+                            <span class="font-semibold text-white">Robotics</span>
+                        </div>
+                        <div class="group p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 hover:bg-green-500/30 transition-all">
+                            <i class="fas fa-gamepad text-2xl text-green-400 mb-2 block group-hover:scale-110"></i>
+                            <span class="font-semibold text-white">Competitive Programming</span>
+                        </div>
+                        <div class="group p-4 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 hover:bg-orange-500/30 transition-all">
+                            <i class="fas fa-puzzle-piece text-2xl text-orange-400 mb-2 block group-hover:scale-110"></i>
+                           
